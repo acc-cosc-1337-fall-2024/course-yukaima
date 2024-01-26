@@ -12,5 +12,18 @@ int main()
 {
 	int num = 0;
 
+    cout<<"Enter a number: ";
+	cin>>num;//value fron keyboard saved into the num variable
+
+	int result = 0;
+    result = multiply_numbers(num);
+
+	cout<<"Value is"<<result<<"\n";
+
+	int num1 = 4;
+	result = multiply_numbers(num1);
+
+	cout<<"Value is"<<result<<"\n";
+
 	return 0;
 }
