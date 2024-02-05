@@ -7,9 +7,14 @@ using std::cout;
 using std::cin;
 
 
-int main()
+double main()
 {
-	
+	double meal_amount, tip_rate, tip_amount, tax_amount, total;
+
+	cout << "Please enter the meal amount: ";
+	cin >> meal_amount;
+
+
 
 	return 0;
 }
