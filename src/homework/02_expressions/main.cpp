@@ -7,8 +7,7 @@ using std::cout;
 using std::cin;
 
 
-double main()
-{
+int main(){
 	double meal_amount, tip_rate, tip_amount, tax_amount, total;
 
 	cout << "Please enter the meal amount: ";
@@ -29,4 +28,5 @@ double main()
     cout << "Total: " << total << "\n";
 
 	return 0;
+	
 }
