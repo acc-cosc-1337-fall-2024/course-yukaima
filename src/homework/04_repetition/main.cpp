@@ -14,7 +14,7 @@ int main()
 
 	do
 	{
-		cout<<"MENU\n";
+		cout<<"\nMENU\n";
 		cout<<"1-Factorial\n";
 		cout<<"2-Greatest Common Divisor\n";
 		cout<<"3-Exit\n";
@@ -27,7 +27,7 @@ int main()
 		case 1:
 			cout<<"Please enter the number you want to get its factorial(int): ";
 			cin>>number;
-			cout<<"The factorial is "<< factorial(number)<<"\n";
+			cout<<"The factorial is "<< factorial(number);
 
 			break;
 		case 2:
@@ -37,17 +37,17 @@ int main()
 			cout<<"Please enter the second number(int): ";
 			cin>>number2;
 
-			cout<<"The greatest common divisor is "<< gcd(number1, number2)<<"\n";
+			cout<<"The greatest common divisor is "<< gcd(number1, number2);
 			break;
 		case 3:
-		    cout<<"Are you sure you want to exit?(Y or N): ";
+		    cout<<"Are you sure you want to exit?(y or n): ";
 			cin>> exit_choice;
-			if (exit_choice == 'Y')
+			if (exit_choice == 'y'|| exit_choice == 'Y')
 			{
 				cout<<"EXIT";
 				choice = 4;
 			}
-			else if (exit_choice == 'N')
+			else if (exit_choice == 'n'|| exit_choice == 'N')
 			{
 				choice = 3;
 			}
