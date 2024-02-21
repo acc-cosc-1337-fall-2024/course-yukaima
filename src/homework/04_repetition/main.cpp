@@ -1,15 +1,20 @@
 //write include statements
 #include <iostream>
+#include "repetition.h"
+
 //write using statements
 using std::cout;
 using std::cin;
 
+
 int main() 
 {
-	int choice;
+	int choice, number, number1, number2;
+	char exit_choice;
 
 	do
 	{
+		cout<<"MENU\n";
 		cout<<"1-Factorial\n";
 		cout<<"2-Greatest Common Divisor\n";
 		cout<<"3-Exit\n";
@@ -20,20 +25,46 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			/* code */
+			cout<<"Please enter the number you want to get its factorial(int): ";
+			cin>>number;
+			cout<<"The factorial is "<< factorial(number)<<"\n";
+
 			break;
-		
+		case 2:
+		    cout<<"You want to get the greatest common divisor \n Please enter the first number(int): ";
+			cin>>number1;
+
+			cout<<"Please enter the second number(int): ";
+			cin>>number2;
+
+			cout<<"The greatest common divisor is "<< gcd(number1, number2)<<"\n";
+			break;
+		case 3:
+		    cout<<"Are you sure you want to exit?(Y or N): ";
+			cin>> exit_choice;
+			if (exit_choice == 'Y')
+			{
+				cout<<"EXIT";
+				choice = 4;
+			}
+			else if (exit_choice == 'N')
+			{
+				choice = 3;
+			}
+			else
+			{
+				cout<<"error";
+			}
+			
+		    break;
 		default:
+		    cout<<"Invalid choice! Please enter a valid option.";
 			break;
 		}
 
 		
 
-
-
-
-
-	} while (choice != 3);
+	} while (choice != 4);
 	
 
 
