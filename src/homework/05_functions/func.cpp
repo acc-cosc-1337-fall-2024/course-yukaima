@@ -5,30 +5,31 @@
 double get_gc_content( const string& dna )
 {
     int gc_count = 0;
-    int i ;
-    for ( i = 1; i <= dna.length(); i++)
+    int i = 0 ;
+    while ( i < dna.length() )
     {
         char character = dna[i];
         if (character == 'G' || character == 'C') 
         {
-            gc_count++;
+            gc_count = gc_count + 1;
         }
+        i = i+1;
     }
 
-    double gc_percent;
-    gc_percent =  (gc_count) / dna.length();
-
-    return gc_percent;
+    
+    return (gc_count / dna.length());
 }
 
 
 string get_reverse_string( string dna )
 {
-    string reversed_dna ;
-    int i = dna.length() ;
-    for ( i ; i >= 0; i--) 
+    
+    int i = dna.length() - 1  ;
+    string reversed_dna;
+    while ( i > 0 ) 
     {
         reversed_dna = reversed_dna + dna[i];
+        i = i - 1;
     }
 
     return reversed_dna;
@@ -39,7 +40,7 @@ string get_dna_complement( string dna )
 {
     string complement = dna;
     int i ;
-    for ( i = 1; i <= dna.length(); i++)
+    for ( i = 0; i < dna.length() - 1 ; ++i)
     {
         char character = complement[i];
         switch (character) 
