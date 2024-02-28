@@ -4,8 +4,8 @@
 
 TEST_CASE("Test get_gc_content") 
 {
-	REQUIRE(get_gc_content( "AGCTATAG" ) == .375);
-	REQUIRE(get_gc_content( "CGCTATAG" ) == .5);
+	REQUIRE(get_gc_content( "AGCTATAG" ) == 0.375);
+	REQUIRE(get_gc_content( "CGCTATAG" ) == 0.5);
 }
 
 TEST_CASE("Test function get_reverse_string") 

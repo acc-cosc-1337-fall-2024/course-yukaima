@@ -9,14 +9,15 @@ using std::string;
 
 int main() 
 {
+	//variable
     int choice;
     string dna;
 	string reversed_dna;
 	char exit_choice;
-    double gc_percent;
+
     do 
 	{
-        cout << "\nMain Menu\n";
+        cout << "\nMain Menu\n";//menu
 		cout << "***Enter 1 to Get GC Content or 2 to Get DNA Complement***\n";
         cout << "1- Get GC Content\n";
         cout << "2- Get DNA Complement\n";
@@ -29,14 +30,12 @@ int main()
             case 1:
                 cout << "Enter DNA String (Capitalized): ";
                 cin >> dna;
-				gc_percent = get_gc_content( dna );
-                cout << "GC Content: " << gc_percent << "\n";
+                cout << "GC Content: " << get_gc_content( dna ) << "\n";
                 break;
             case 2:
                 cout << "Enter DNA String (Capitalized): ";
                 cin >> dna;
-				reversed_dna = get_reverse_string( dna );
-                cout << "DNA Complement: " << get_dna_complement(reversed_dna) << "\n";
+                cout << "DNA Complement: " << get_dna_complement( dna ) << "\n";
            break;
             case 3:
 		    cout<<"Are you sure you want to exit?(y or n): ";

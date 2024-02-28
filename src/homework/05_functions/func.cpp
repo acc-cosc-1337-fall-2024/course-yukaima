@@ -4,20 +4,18 @@
 
 double get_gc_content( const string& dna )
 {
-    int gc_count = 0;
+    double gc_count = 0;
     int i = 0 ;
     while ( i < dna.length() )
     {
         char character = dna[i];
-        if (character == 'G' || character == 'C') 
+        if (character == 'G' || character == 'C') //count "GC"
         {
             gc_count = gc_count + 1;
         }
         i = i+1;
     }
-
-    
-    return (gc_count / dna.length());
+    return gc_count / dna.length();//give percent
 }
 
 
@@ -26,9 +24,9 @@ string get_reverse_string( string dna )
     
     int i = dna.length() - 1  ;
     string reversed_dna;
-    while ( i > 0 ) 
+    while ( i >= 0 ) 
     {
-        reversed_dna = reversed_dna + dna[i];
+        reversed_dna = reversed_dna + dna[i];//reverse
         i = i - 1;
     }
 
@@ -36,29 +34,30 @@ string get_reverse_string( string dna )
 }
 
 
-string get_dna_complement( string dna )
+string get_dna_complement(string dna)
 {
-    string complement = dna;
-    int i ;
-    for ( i = 0; i < dna.length() - 1 ; ++i)
+    string complement = get_reverse_string( dna ); //reverse string
+    int i = 0 ;
+    while ( i < dna.length() )
     {
         char character = complement[i];
-        switch (character) 
+        switch (character) //change the character
         {
             case 'A':
-                character = 'T';
+                complement[i] = 'T';
                 break;
             case 'T':
-                character = 'A';
+                complement[i] = 'A';
                 break;
             case 'C':
-                character = 'G';
+                complement[i] = 'G';
                 break;
             case 'G':
-                character = 'C';
+                complement[i] = 'C';
                 break;
         }
-        complement[i] = character;
+
+        i = i+1;
     }
     return complement;
 }
