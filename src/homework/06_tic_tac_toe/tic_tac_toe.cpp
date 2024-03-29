@@ -2,10 +2,12 @@
 //public function
 #include "tic_tac_toe.h"
 
+using std::cout;
+
 //game_over
 bool tictactoe::game_over()
 {
-    return false;  //return check_board_full function return value
+    return check_board_full();  //return check_board_full function return value
 }
 
 //start_game
@@ -26,6 +28,10 @@ void tictactoe::mark_board(int position)
 //display_board
 void tictactoe::display_board() const
 {
+    for (long unsigned int i = 0; i < pegs.size(); i += 3)
+    {
+        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";  //display a tic tac toe board in 3x 3 format
+    }
     
 }
 
@@ -44,13 +50,28 @@ void tictactoe::clear_board()
 //set_next_player
 void tictactoe::set_next_player()
 {
-    if (player == "x")  //If private variable player x player is y, elseplayer is x.
+    if (player == "X")  //If private variable player x player is y, elseplayer is x.
     {
-        player = "y";
+        player = "O";
     }
     else
     {
-        player = "x";
+        player = "X";
     }
     
+}
+
+//check_board_full
+bool tictactoe::check_board_full()
+{
+    for (long unsigned int i = 0; i < pegs.size(); i++)
+    {
+        if (pegs[i] == " ")
+        {
+            return false;
+        }
+        
+    }
+    
+    return true;
 }
