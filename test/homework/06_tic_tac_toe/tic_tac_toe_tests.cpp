@@ -10,6 +10,8 @@ TEST_CASE("Test if the bord is full")
 {
 	tictactoe game;
 
+	game.start_game("X");
+
 	game.mark_board(1);
 	REQUIRE(game.game_over() == false);
 	game.mark_board(2);
@@ -28,7 +30,8 @@ TEST_CASE("Test if the bord is full")
 	REQUIRE(game.game_over() == false);
 	game.mark_board(8);
 	REQUIRE(game.game_over() == true);
-
+	
+	
 
 }
 

@@ -7,7 +7,31 @@ using std::cout;
 //game_over
 bool tictactoe::game_over()
 {
-    return check_board_full();  //return check_board_full function return value
+    bool game_result;
+
+    if (check_column_win())
+    {
+        game_result = true;
+    }
+    else if (check_row_win())
+    {
+        game_result = true;
+    }
+    else if (check_diagonal_win())
+    {
+        game_result = true;
+    }
+    else if (check_board_full())
+    {
+        game_result = true;
+        winner = "C";
+    }
+    else
+    {
+        game_result = false;
+    }
+
+    return game_result;
 }
 
 //start_game
@@ -34,6 +58,9 @@ void tictactoe::display_board() const
     }
     
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //private function
@@ -72,6 +99,135 @@ bool tictactoe::check_board_full()
         }
         
     }
-    
     return true;
+}
+
+//check_column_win
+bool tictactoe::check_column_win()
+{
+    for (int i = 0; i < pegs.size(); i = i+3)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+        
+    }
+    
+    for (int i = 1; i < pegs.size(); i = i+3)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+        
+    }
+    
+    for (int i = 2; i < pegs.size(); i = i+3)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+        
+    }
+
+    return false;
+}
+
+//check_row_win
+bool tictactoe::check_row_win()
+{
+    for (int i = 0; i < 3; i = i++)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+    }
+
+    for (int i = 3; i < 6; i = i++)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+    }
+
+    for (int i = 6; i < 9; i = i++)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+//check_diagonal_win
+bool tictactoe::check_diagonal_win()
+{
+    for (int i = 0; i < pegs.size(); i = i + 4)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+    }
+
+    for (int i = 2; i < pegs.size(); i = i + 2)
+    {
+        if (pegs[i] == "X")
+        {
+            return true;
+        }
+        else if (pegs[i] == "O")
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void tictactoe::set_winner()
+{
+    if (player == "X") 
+    {
+        winner = "O";
+    }
+    else
+    {
+        winner = "X";
+    }
+
 }
