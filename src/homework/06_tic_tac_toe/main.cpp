@@ -13,11 +13,12 @@ int main()
 {
 	tictactoe game;
 	string first_player;
+	string winner;
 	char user_choice = 'y';
 
 	do
 	{
-		cout<<"Enter first player's name: ";
+		cout<<"Enter first player's name(must be X or O): ";
 		cin>>first_player;
 
 		game.start_game(first_player);
@@ -32,13 +33,16 @@ int main()
 			game.display_board();
 
 		}
-		
+
+		winner = game.get_winner();
+
+        cout<<"Winner is: "<<winner<<"\n";
         cout<<"Play again? ( if yes, enter y or Y) ";
 		cin>>user_choice;
 
 
 	} 
-	while (user_choice == 'y' || 'Y');
+	while (user_choice == 'y' || user_choice == 'Y');
 	
 
 	return 0;

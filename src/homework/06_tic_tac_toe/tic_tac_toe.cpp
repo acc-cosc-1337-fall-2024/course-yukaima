@@ -11,14 +11,17 @@ bool tictactoe::game_over()
 
     if (check_column_win())
     {
+        set_winner();
         game_result = true;
     }
     else if (check_row_win())
     {
+        set_winner();
         game_result = true;
     }
     else if (check_diagonal_win())
     {
+        set_winner();
         game_result = true;
     }
     else if (check_board_full())
