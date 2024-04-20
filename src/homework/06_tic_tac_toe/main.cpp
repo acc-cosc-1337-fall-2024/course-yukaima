@@ -43,23 +43,23 @@ int main()
 	    cout<<"Enter first player's name(must be X or O): ";
 		cin>>first_player;
 
-		game.start_game(first_player);
+		game->start_game(first_player);
 
 		int position;
 
-		while (game.game_over() == false)
+		while (game->game_over() == false)
 		{
 			cout<<"Enter a position: ";
 			cin>>position;
-			game.mark_board(position);
-			game.display_board();
+			game->mark_board(position);
+			game->display_board();
 
 		}
         
-		manager.save_game(*game);
+		manager.save_game(game);
 		manager.get_winner_total(o,x,t);
 
-		winner = game.get_winner();
+		winner = game->get_winner();
 
         cout<<"Winner is: "<<winner<<"\n";
 		cout<<"O wins: "<<o<<"\n";
