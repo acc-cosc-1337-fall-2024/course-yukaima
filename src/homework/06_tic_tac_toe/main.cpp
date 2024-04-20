@@ -4,6 +4,8 @@
 
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 
 using std::cout;
@@ -22,26 +24,23 @@ int main()
 	char user_choice = 'y';
 	int o, x, t;
 
-
-    cout<<"Choose 3*3 (enter 3) or 4*4 (enter 4) tictactoe game:";
-	cin>>choice;
-
-
-    if (choice == 3) {
-        game = make_unique<tictactoe3>(); 
-    } else if (choice == 4) {
-        game = make_unique<tictactoe4>(); 
-    }
-
-	
-	
-
-	return 0;
-}
-
     do
 	{
-		cout<<"Enter first player's name(must be X or O): ";
+		cout<<"Choose 3*3 (enter 3) or 4*4 (enter 4) tictactoe game:";
+	    cin>>choice;
+
+
+        if (choice == 3) 
+	    {
+        game = make_unique<tictactoe3>(); 
+        } 
+	    else if (choice == 4) 
+	    {
+        game = make_unique<tictactoe4>(); 
+        }
+
+
+	    cout<<"Enter first player's name(must be X or O): ";
 		cin>>first_player;
 
 		game.start_game(first_player);
@@ -57,7 +56,7 @@ int main()
 
 		}
         
-		manager.save_game(game);
+		manager.save_game(*game);
 		manager.get_winner_total(o,x,t);
 
 		winner = game.get_winner();
@@ -72,3 +71,12 @@ int main()
 
 	} 
 	while (user_choice == 'y' || user_choice == 'Y');
+    
+
+	
+	
+
+	return 0;
+}
+
+    

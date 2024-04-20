@@ -2,7 +2,7 @@
 #include "tic_tac_toe_manager.h"
 
 
-void tictactoe_manager::save_game(unique_ptr<tictactoe> game) 
+void tictactoe_manager::save_game(unique_ptr<tictactoe>& game) 
 {
     update_winner_count(game->get_winner());
     games.push_back(std::move(game));
