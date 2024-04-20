@@ -13,8 +13,9 @@ using std::unique_ptr;
 class tictactoe_manager
 {
 public:
-    void save_game(unique_ptr<tictactoe>& game);
+    void save_game(unique_ptr<tictactoe>game);
     void get_winner_total(int& o, int& x, int&t);
+    void display();
 
 private:
     vector <unique_ptr<tictactoe>>games;

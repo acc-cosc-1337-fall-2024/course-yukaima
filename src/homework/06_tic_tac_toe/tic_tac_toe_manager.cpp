@@ -1,7 +1,8 @@
 //cpp
 #include "tic_tac_toe_manager.h"
 
-void tictactoe_manager::save_game(unique_ptr<tictactoe>& game) 
+
+void tictactoe_manager::save_game(unique_ptr<tictactoe> game) 
 {
     update_winner_count(game->get_winner());
     games.push_back(std::move(game));
@@ -28,4 +29,15 @@ void tictactoe_manager::update_winner_count(std::string winner)
     {
         ties++;
     }
+}
+
+void tictactoe_manager::display()
+{
+    std::cout<<" Game Played: "<<"\n";
+    for (auto& game : games)
+    { 
+        std::cout<< &game <<"\n";
+    }
+    
+
 }
