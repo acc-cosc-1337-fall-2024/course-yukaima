@@ -31,6 +31,11 @@ void tictactoe_manager::update_winner_count(std::string winner)
     }
 }
 
+
+//doesn't find "display" part 
+//request:"3. Add a display function to display all the games played.
+//     a. Add a reference to the loop auto& game, unique pointers must be referenced..
+//     b. Account for dereferencing pointers in the loop block, change game to *game."
 void tictactoe_manager::display()
 {
     std::cout<<" Game Played: "<<"\n";
