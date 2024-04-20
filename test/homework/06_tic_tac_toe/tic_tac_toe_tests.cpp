@@ -427,5 +427,5 @@ TEST_CASE("Test get_winner_total 3 games")
     REQUIRE(o == 1);
 	REQUIRE(x == 1);
     REQUIRE(t == 1);
-	
 }
+
