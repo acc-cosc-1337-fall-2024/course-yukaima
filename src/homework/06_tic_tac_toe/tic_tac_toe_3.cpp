@@ -10,7 +10,7 @@ else
 false
 */
 
-bool tictactoe::check_column_win()
+bool tictactoe3::check_column_win()
  
 {
     for (int i = 0;  i < 3; i++)
@@ -37,7 +37,7 @@ Win by row if
 6,7,8 are equal
 */
 
-bool tictactoe::check_row_win()
+bool tictactoe3::check_row_win()
 {
     for (int i = 0;  i < 9; i = i+3)
     {
@@ -64,7 +64,7 @@ Win diagonally
 
 */
 
-bool tictactoe::check_diagonal_win()
+bool tictactoe3::check_diagonal_win()
 {
     if (pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
     {

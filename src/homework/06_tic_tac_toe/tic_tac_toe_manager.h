@@ -13,7 +13,7 @@ using std::unique_ptr;
 class tictactoe_manager
 {
 public:
-    void save_game(unique_ptr<tictactoe>);
+    void save_game(unique_ptr<tictactoe>& game);
     void get_winner_total(int& o, int& x, int&t);
 
 private:
