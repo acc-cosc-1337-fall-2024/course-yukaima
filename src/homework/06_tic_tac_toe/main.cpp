@@ -29,18 +29,14 @@ int main()
 		cout<<"Choose 3*3 (enter 3) or 4*4 (enter 4) tictactoe game:";
 	    cin>>choice;
 
+		
+
 
         if (choice == 3) 
 	    {
         game = make_unique<tictactoe3>(); 
-        } 
-	    else if (choice == 4) 
-	    {
-        game = make_unique<tictactoe4>(); 
-        }
 
-
-	    cout<<"Enter first player's name(must be X or O): ";
+		cout<<"Enter first player's name(must be X or O): ";
 		cin>>first_player;
 
 		game->start_game(first_player);
@@ -56,10 +52,45 @@ int main()
 
 		}
         
-		manager.save_game(game);
+		winner = game->get_winner();
+		manager.save_game( game );
 		manager.get_winner_total(o,x,t);
 
+		
+        cout<<"Winner is: "<<winner<<"\n";
+		cout<<"O wins: "<<o<<"\n";
+		cout<<"X wins: "<<x<<"\n";
+		cout<<"ties: "<<t<<"\n";
+        cout<<"Play again? ( if yes, enter y or Y) ";
+		cin>>user_choice;
+
+        } 
+
+		////////////////////////////////////////////////
+
+	    else if (choice == 4) 
+	    {
+        game = make_unique<tictactoe4>(); 
+
+		cout<<"Enter first player's name(must be X or O): ";
+		cin>>first_player;
+
+		game->start_game(first_player);
+
+		int position;
+
+		while (game->game_over() == false)
+		{
+			cout<<"Enter a position: ";
+			cin>>position;
+			game->mark_board(position);
+			game->display_board();
+
+		}
+        
 		winner = game->get_winner();
+		manager.save_game( game );
+		manager.get_winner_total(o,x,t);
 
         cout<<"Winner is: "<<winner<<"\n";
 		cout<<"O wins: "<<o<<"\n";
@@ -67,6 +98,9 @@ int main()
 		cout<<"ties: "<<t<<"\n";
         cout<<"Play again? ( if yes, enter y or Y) ";
 		cin>>user_choice;
+
+
+        }
 
 
 	} 
