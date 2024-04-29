@@ -48,7 +48,7 @@ int main()
 			cout<<"Enter a position: ";
 			cin>>position;
 			game->mark_board(position);
-			game->display_board();
+			game->display_board(choice);
 
 		}
         
@@ -84,7 +84,7 @@ int main()
 			cout<<"Enter a position: ";
 			cin>>position;
 			game->mark_board(position);
-			game->display_board();
+			game->display_board(choice);
 
 		}
         

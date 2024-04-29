@@ -41,7 +41,7 @@ void tictactoe_manager::display()
     std::cout<<" Game Played: "<<"\n";
     for (auto& game : games)
     { 
-        (*game).display_board();
+        (*game).display_board(4);
         std::cout << "\n";
     }
     

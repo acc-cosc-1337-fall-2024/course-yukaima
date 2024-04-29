@@ -50,12 +50,24 @@ void tictactoe::mark_board(int position)
 }
 
 //display_board
-void tictactoe::display_board() const
+void tictactoe::display_board(int choice)
 {
-    for (long unsigned int i = 0; i < pegs.size(); i += 3)
+    if (choice == 3)
+    {
+        for (long unsigned int i = 0; i < pegs.size(); i += 3)
     {
         cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";  //display a tic tac toe board in 3x 3 format
     }
+    }
+    else if (choice == 4)
+    {
+        for (long unsigned int i = 0; i < pegs.size(); i += 4)
+    {
+        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"|"<<pegs[i+3]<<"\n";  //display a tic tac toe board in 4x 4 format
+    }
+    }
+    
+    
     
 }
 

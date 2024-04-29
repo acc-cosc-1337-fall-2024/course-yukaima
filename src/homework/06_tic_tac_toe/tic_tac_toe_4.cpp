@@ -16,11 +16,11 @@ bool tictactoe4::check_column_win()
 {
     for (int i = 0;  i < 4; i++)
     {
-        if (pegs[i] == "X" && pegs[i + 4] == "X" && pegs[i + 8] == "X")
+        if (pegs[i] == "X" && pegs[i + 4] == "X" && pegs[i + 8] == "X"&& pegs[i + 12] == "X")
         {
             return true;
         }
-        if (pegs[i] == "O" && pegs[i + 4] == "O" && pegs[i + 8] == "O")
+        if (pegs[i] == "O" && pegs[i + 4] == "O" && pegs[i + 8] == "O"&& pegs[i + 12] == "O")
         {
             return true;
         }
